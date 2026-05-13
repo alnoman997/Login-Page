@@ -14,6 +14,22 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: AppBar(
         backgroundColor: Colors.indigo,
       ),
+      body: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          spacing: 15,
+          children: [
+            FlutterLogo(size: 100),
+            TextField(
+              decoration: InputDecoration(
+                hintText: 'Email',
+                border: OutlineInputBorder()
+
+              ) ,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
