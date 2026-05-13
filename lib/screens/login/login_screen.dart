@@ -15,9 +15,9 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.indigo,
-      ),
+      // appBar: AppBar(
+      //   backgroundColor: Colors.indigo,
+      // ),
       body: Padding(
         padding: const EdgeInsets.all(15),
         child: Form(
@@ -25,6 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
           child: Column(
             spacing: 15,
             children: [
+              SizedBox(height: 100),
               FlutterLogo(size: 100),
               TextField(
                 controller: email,
@@ -59,6 +60,18 @@ class _LoginScreenState extends State<LoginScreen> {
               TextButton(
                   onPressed: (){},
                   child: Text('Forgot Password'),
+              ),
+              Spacer(),
+
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton (
+                  onPressed: (){},
+                  style: OutlinedButton.styleFrom(
+                    padding: EdgeInsets.all(15)
+                  ) ,
+                  child: Text("Don't have an account? Register Here." ),
+                ),
               )
             ],
           ),
