@@ -10,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
-  GlobalKey formkey = GlobalKey<FormState>();
+  GlobalKey<FormState> formkey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -40,28 +40,44 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             SizedBox(height: 15),
 
-            TextField(
+            TextFormField(
               controller: email,
               decoration: InputDecoration(
                 hintText: 'Email',
                 border: OutlineInputBorder(),
               ),
+              validator:(value){
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your email';
+                }
+                return null ;
+              },
             ),
-            SizedBox(height: 15),
 
-            TextField(
+            SizedBox(height: 15),
+            TextFormField(
               controller: password,
               decoration: InputDecoration(
                 hintText: 'Password',
                 border: OutlineInputBorder(),
               ),
+              validator:(value){
+                if (value == null || value.isEmpty) {
+                  return 'Please enter your password';
+                }
+                return null ;
+              },
             ),
-            SizedBox(height: 15),
 
+            SizedBox(height: 15),
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (formkey.currentState!.validate()){
+
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.indigo,
                   foregroundColor: Colors.white,
