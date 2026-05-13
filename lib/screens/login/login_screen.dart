@@ -18,64 +18,81 @@ class _LoginScreenState extends State<LoginScreen> {
       // appBar: AppBar(
       //   backgroundColor: Colors.indigo,
       // ),
-      body: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Form(
-          key: formkey,
-          child: Column(
-            spacing: 15,
-            children: [
-              SizedBox(height: 100),
-              FlutterLogo(size: 100),
-              Text('Login Here', style: TextStyle(fontSize: 20)),
-              TextField(
-                controller: email,
-                decoration: InputDecoration(
-                  hintText: 'Email',
-                  border: OutlineInputBorder()
-          
-                ) ,
-              ),
-          
-              TextField(
-                controller: password,
-                decoration: InputDecoration(
-                    hintText: 'Password',
-                    border: OutlineInputBorder()
-          
-                ) ,
-              ),
+      body: Form(
+        key: formkey,
+        child: ListView(
+          padding: EdgeInsets.all(10),
+          // spacing: 15,   // This was given when column widget was there instead of Listview.
+          children: [
+            SizedBox(height: 100),
+            FlutterLogo(size: 100),
+            SizedBox(height: 20),
 
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
+            Text(
+              'Login Here', textAlign: TextAlign.center,
+              style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(height: 15),
+
+            Text(
+              'Please enter your email and password to get started with your account:',
+              style: TextStyle(fontWeight: FontWeight.w300),
+            ),
+            SizedBox(height: 15),
+
+            TextField(
+              controller: email,
+              decoration: InputDecoration(
+                hintText: 'Email',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 15),
+
+            TextField(
+              controller: password,
+              decoration: InputDecoration(
+                hintText: 'Password',
+                border: OutlineInputBorder(),
+              ),
+            ),
+            SizedBox(height: 15),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.all(15),
+                ),
+                child: Text('Login'),
+              ),
+            ),
+
+            SizedBox(height: 10),
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
                     onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.indigo,
-                    foregroundColor: Colors.white,
-                    padding: EdgeInsets.all(15)
-                  ),
-                    child: Text('Login'),
-                ),
-              ),
-              TextButton(
-                  onPressed: (){},
-                  child: Text('Forgot Password'),
-              ),
-              Spacer(),
+                    child: Text('Forgot Password')),
+              ],
+            ),
+            SizedBox(height: 20),
 
-              SizedBox(
-                width: double.infinity,
-                child: OutlinedButton (
-                  onPressed: (){},
-                  style: OutlinedButton.styleFrom(
-                    padding: EdgeInsets.all(15)
-                  ) ,
-                  child: Text("Don't have an account? Register Here." ),
-                ),
-              )
-            ],
-          ),
+            // Spacer(),     // This was given when column widget was there instead of Listview.
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15)),
+                child: Text("Don't have an account? Register Here."),
+              ),
+            ),
+          ],
         ),
       ),
     );
