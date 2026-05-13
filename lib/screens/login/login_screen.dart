@@ -27,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
             children: [
               SizedBox(height: 100),
               FlutterLogo(size: 100),
+              Text('Login Here', style: TextStyle(fontSize: 20)),
               TextField(
                 controller: email,
                 decoration: InputDecoration(
