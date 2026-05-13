@@ -42,6 +42,15 @@ class _LoginScreenState extends State<LoginScreen> {
                     border: OutlineInputBorder()
           
                 ) ,
+              ),
+
+              ElevatedButton(
+                  onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.indigo,
+                  foregroundColor: Colors.white,
+                ),
+                  child: Text('Login'),
               )
             ],
           ),
