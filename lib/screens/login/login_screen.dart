@@ -8,6 +8,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController email = TextEditingController();
+  TextEditingController password = TextEditingController();
+  GlobalKey formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,18 +20,31 @@ class _LoginScreenState extends State<LoginScreen> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(15),
-        child: Column(
-          spacing: 15,
-          children: [
-            FlutterLogo(size: 100),
-            TextField(
-              decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder()
-
-              ) ,
-            )
-          ],
+        child: Form(
+          key: formkey,
+          child: Column(
+            spacing: 15,
+            children: [
+              FlutterLogo(size: 100),
+              TextField(
+                controller: email,
+                decoration: InputDecoration(
+                  hintText: 'Email',
+                  border: OutlineInputBorder()
+          
+                ) ,
+              ),
+          
+              TextField(
+                controller: password,
+                decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder()
+          
+                ) ,
+              )
+            ],
+          ),
         ),
       ),
     );
