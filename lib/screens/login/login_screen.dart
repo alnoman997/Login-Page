@@ -44,13 +44,21 @@ class _LoginScreenState extends State<LoginScreen> {
                 ) ,
               ),
 
-              ElevatedButton(
-                  onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo,
-                  foregroundColor: Colors.white,
+              SizedBox(
+                width: double.infinity,
+                child: ElevatedButton(
+                    onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.indigo,
+                    foregroundColor: Colors.white,
+                    padding: EdgeInsets.all(15)
+                  ),
+                    child: Text('Login'),
                 ),
-                  child: Text('Login'),
+              ),
+              TextButton(
+                  onPressed: (){},
+                  child: Text('Forgot Password'),
               )
             ],
           ),
