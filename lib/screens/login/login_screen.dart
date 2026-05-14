@@ -57,8 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(height: 20),
 
                 Text(
-                  'Login Here', textAlign: TextAlign.center,
-                  style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold),
+                  'Login Here',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(height: 15),
 
@@ -74,11 +75,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Email',
                     border: OutlineInputBorder(),
                   ),
-                  validator:(value){
+                  validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
                     }
-                    return null ;
+                    return null;
                   },
                 ),
 
@@ -89,11 +90,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     hintText: 'Password',
                     border: OutlineInputBorder(),
                   ),
-                  validator:(value){
+                  validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
                     }
-                    return null ;
+                    return null;
                   },
                 ),
 
@@ -102,9 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: double.infinity,
                   child: ElevatedButton(
                     onPressed: () {
-                      if (formkey.currentState!.validate()){
-
-                      }
+                      if (formkey.currentState!.validate()) {}
                     },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.indigo,
@@ -121,8 +120,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextButton(
-                        onPressed: () {},
-                        child: Text('Forgot Password')),
+                      onPressed: () {},
+                      child: Text('Forgot Password'),
+                    ),
                   ],
                 ),
                 SizedBox(height: 20),
@@ -132,15 +132,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   width: double.infinity,
                   child: OutlinedButton(
                     onPressed: () {},
-                    style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15)),
+                    style: OutlinedButton.styleFrom(
+                      padding: EdgeInsets.all(15),
+                    ),
                     child: Text("Don't have an account? Register Here."),
                   ),
                 ),
               ],
             ),
-
           ],
-        )
+        ),
       ),
     );
   }
