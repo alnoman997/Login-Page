@@ -11,6 +11,7 @@ class _LoginScreenState extends State<LoginScreen> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   GlobalKey<FormState> formkey = GlobalKey<FormState>();
+  bool isHidden = true;
 
   @override
   Widget build(BuildContext context) {
@@ -84,12 +85,26 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 SizedBox(height: 15),
+
                 TextFormField(
                   controller: password,
+                  obscureText: isHidden,
                   decoration: InputDecoration(
                     hintText: 'Password',
                     border: OutlineInputBorder(),
+
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        isHidden ? Icons.visibility_off : Icons.visibility,
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          isHidden = !isHidden;
+                        });
+                      },
+                    ),
                   ),
+
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
@@ -99,6 +114,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
 
                 SizedBox(height: 15),
+
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
