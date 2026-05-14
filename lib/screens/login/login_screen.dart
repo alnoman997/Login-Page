@@ -20,96 +20,110 @@ class _LoginScreenState extends State<LoginScreen> {
       // ),
       body: Form(
         key: formkey,
-        child: ListView(
-          padding: EdgeInsets.all(10),
-          // spacing: 15,   // This was given when column widget was there instead of Listview.
+        child: Stack(
           children: [
-            SizedBox(height: 100),
-            FlutterLogo(size: 100),
-            SizedBox(height: 20),
-
-            Text(
-              'Login Here', textAlign: TextAlign.center,
-              style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-            SizedBox(height: 15),
-
-            Text(
-              'Please enter your email and password to get started with your account:',
-              style: TextStyle(fontWeight: FontWeight.w300),
-            ),
-            SizedBox(height: 15),
-
-            TextFormField(
-              controller: email,
-              decoration: InputDecoration(
-                hintText: 'Email',
-                border: OutlineInputBorder(),
-              ),
-              validator:(value){
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your email';
-                }
-                return null ;
-              },
-            ),
-
-            SizedBox(height: 15),
-            TextFormField(
-              controller: password,
-              decoration: InputDecoration(
-                hintText: 'Password',
-                border: OutlineInputBorder(),
-              ),
-              validator:(value){
-                if (value == null || value.isEmpty) {
-                  return 'Please enter your password';
-                }
-                return null ;
-              },
-            ),
-
-            SizedBox(height: 15),
-            SizedBox(
-              width: double.infinity,
-              child: ElevatedButton(
-                onPressed: () {
-                  if (formkey.currentState!.validate()){
-
-                  }
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.indigo,
-                  foregroundColor: Colors.white,
-                  padding: EdgeInsets.all(15),
-                ),
-                child: Text('Login'),
-              ),
-            ),
-
-            SizedBox(height: 10),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+            ListView(
+              padding: EdgeInsets.all(10),
+              // spacing: 15,   // This was given when column widget was there instead of Listview.
               children: [
-                TextButton(
+                SizedBox(height: 100),
+                FlutterLogo(size: 100),
+                SizedBox(height: 20),
+
+                Text(
+                  'Login Here', textAlign: TextAlign.center,
+                  style: TextStyle( fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 15),
+
+                Text(
+                  'Please enter your email and password to get started with your account:',
+                  style: TextStyle(fontWeight: FontWeight.w300),
+                ),
+                SizedBox(height: 15),
+
+                TextFormField(
+                  controller: email,
+                  decoration: InputDecoration(
+                    hintText: 'Email',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator:(value){
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    }
+                    return null ;
+                  },
+                ),
+
+                SizedBox(height: 15),
+                TextFormField(
+                  controller: password,
+                  decoration: InputDecoration(
+                    hintText: 'Password',
+                    border: OutlineInputBorder(),
+                  ),
+                  validator:(value){
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    }
+                    return null ;
+                  },
+                ),
+
+                SizedBox(height: 15),
+                SizedBox(
+                  width: double.infinity,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      if (formkey.currentState!.validate()){
+
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.indigo,
+                      foregroundColor: Colors.white,
+                      padding: EdgeInsets.all(15),
+                    ),
+                    child: Text('Login'),
+                  ),
+                ),
+
+                SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    TextButton(
+                        onPressed: () {},
+                        child: Text('Forgot Password')),
+                  ],
+                ),
+                SizedBox(height: 20),
+
+                // Spacer(),     // This was given when column widget was there instead of Listview.
+                SizedBox(
+                  width: double.infinity,
+                  child: OutlinedButton(
                     onPressed: () {},
-                    child: Text('Forgot Password')),
+                    style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15)),
+                    child: Text("Don't have an account? Register Here."),
+                  ),
+                ),
               ],
             ),
-            SizedBox(height: 20),
-
-            // Spacer(),     // This was given when column widget was there instead of Listview.
-            SizedBox(
-              width: double.infinity,
-              child: OutlinedButton(
-                onPressed: () {},
-                style: OutlinedButton.styleFrom(padding: EdgeInsets.all(15)),
-                child: Text("Don't have an account? Register Here."),
+            Positioned(
+              child: Container(
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration(
+                  color: Colors.indigo,
+                  shape: BoxShape.circle,
+                ),
               ),
-            ),
+            )
           ],
-        ),
+        )
       ),
     );
   }
