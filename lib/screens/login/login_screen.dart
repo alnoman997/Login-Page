@@ -22,6 +22,32 @@ class _LoginScreenState extends State<LoginScreen> {
         key: formkey,
         child: Stack(
           children: [
+            Positioned(
+              top: -140,
+              right: -140,
+              child: Container(
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration(
+                  color: Colors.indigo.withAlpha(130),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+
+            Positioned(
+              top: -125,
+              right: -125,
+              child: Container(
+                height: 250,
+                width: 250,
+                decoration: BoxDecoration(
+                  color: Colors.indigo.withAlpha(130),
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+
             ListView(
               padding: EdgeInsets.all(10),
               // spacing: 15,   // This was given when column widget was there instead of Listview.
@@ -112,16 +138,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ],
             ),
-            Positioned(
-              child: Container(
-                height: 300,
-                width: 300,
-                decoration: BoxDecoration(
-                  color: Colors.indigo,
-                  shape: BoxShape.circle,
-                ),
-              ),
-            )
+
           ],
         )
       ),
